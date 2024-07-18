@@ -1,0 +1,24 @@
+.Footer{
+    background-color: #301913;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    gap: 3rem;
+}
+.Pages-icons, .Contact-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Pages-icons h3, .Contact-icons h3{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+}
+.footer-icons{
+    font-size: 30px;
+    color:white;
+    margin-left: 20px;
+}
