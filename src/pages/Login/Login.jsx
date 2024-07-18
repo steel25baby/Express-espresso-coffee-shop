@@ -13,15 +13,30 @@ const validationSchema = Yup.object().shape({
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (values, { setSubmitting, setErrors }) => {
-    setTimeout(() => {
-      if (values.email === "test@example.com" && values.password === "password") {
-        navigate('/dashboard'); 
-      } else {
-        setErrors({ general: "Invalid email or password" });
+  const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/customers/login', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values)
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
       }
+
+      const data = await response.json();
+      console.log('Login successful', data);
+      // Save the token or user data if needed
+      navigate('/dashboard'); // Navigate to a protected route after login
+    } catch (error) {
+      setFieldError('general', 'Invalid email or password');
+      console.error(error.message);
+    } finally {
       setSubmitting(false);
-    }, 500);
+    }
   };
 
   return (
@@ -56,7 +71,7 @@ const Login = () => {
         )}
       </Formik>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
