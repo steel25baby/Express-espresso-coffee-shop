@@ -1,0 +1,75 @@
+.Header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #301913;
+    min-height: 10vh;
+}
+@media screen and (max-width:45.3em){
+    .Header{
+        flex-wrap: wrap;
+    }
+}
+.Pages-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Navbar-list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-transform: capitalize;
+    gap: 3rem;
+}
+@media screen and (max-width:31.25em){
+    .Navbar-list{
+        flex-wrap: wrap;
+    }
+}
+.Navbar-list a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+.Header-logo{
+    width: 5%;
+    /* height: 40vh; */
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.Header-logo img{
+    width: 100%;
+    height: 100%;
+}
+.Header-ctas{
+  display: flex;  
+  gap: 2rem;
+}
+@media screen and (max-width:40.3em){
+    .Header-ctas{
+        flex-wrap: wrap;
+    }
+}
+.Header-ctas :first-child{
+   text-decoration: none;
+   background-color: white;
+   padding: 10px 20px;
+   border-radius: 30px;
+   text-transform: capitalize;
+   color: #301913;
+   font-size: 20px;
+   font-weight: 500;
+}
+.Header-ctas :last-child{
+    text-decoration: none;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: capitalize;
+    color: #301913;
+    font-size: 20px;
+    font-weight: 500;
+}
