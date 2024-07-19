@@ -1,0 +1,43 @@
+.Menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 5rem;
+}
+.Menu-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #89827c solid 2px;
+    padding: 1rem;
+    min-width: 50%;
+}
+.Card-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.Card-details h3{
+    text-align: center;
+    color: #301913;
+    font-size: 25px;
+}
+.Card-details p{
+    font-size: 20px;
+    text-align: center;
+}
+.Card-details h4{
+    text-align: center;
+    color: white;
+    background-color: #301913;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+.Card-description{
+    text-align: center;
+    color: #301913;
+    font-size: 30px;
+    font-weight: 700;
+}

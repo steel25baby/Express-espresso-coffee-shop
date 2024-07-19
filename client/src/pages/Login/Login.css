@@ -1,0 +1,22 @@
+.L-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.L-form h1{
+    text-align: center;
+    color: #301913;
+}
+.Enter-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: #301913 solid 2px;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
