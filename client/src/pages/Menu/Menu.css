@@ -35,6 +35,14 @@
     padding: 10px 10px;
     border-radius: 10px;
 }
+.Cart-button{
+    text-align: center;
+}
+.Cart-button button{
+    background-color: #8a4700;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
 .Card-description{
     text-align: center;
     color: #301913;

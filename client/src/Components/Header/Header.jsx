@@ -2,6 +2,7 @@ import React from 'react'
 import "./Header.css"
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/HeaderLogo.jpeg"
+import { PiShoppingCartThin } from "react-icons/pi";
 
 const Header = () => {
   return (
@@ -26,6 +27,9 @@ const Header = () => {
       <div className='Header-ctas'>
         <Link to="/login">login</Link>
         <Link to="/register">register</Link>
+      </div>
+      <div className='Header-cart'>
+        <Link to="/cart"><PiShoppingCartThin /></Link>
       </div>
     </section>
     </>
