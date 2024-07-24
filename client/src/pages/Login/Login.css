@@ -20,3 +20,17 @@
     padding: 1rem;
     margin: 1rem;
 }
+.Enter-field label{
+    color: #ffffff;
+    font-size: 30px;
+    margin-right: 2rem;
+}
+.Enter-field input{
+    padding: 10px 15px;
+}
+.SendDiv button{
+    background-color: #8a4700;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+

@@ -46,11 +46,6 @@ const Cart = () => {
                 -
               </button>
               <button onClick={() =>
-                handleQuantityChange(item.id, item.quantity - 1)
-                }>
-                  -
-              </button>
-              <button onClick={() =>
                 handleQuantityChange(item.id, item.quantity +1)
                 }>
                   +
@@ -59,11 +54,6 @@ const Cart = () => {
             </td>
             <td>
             Ksh. {(parseFloat(item.price) * item.quantity).toFixed(2)}{" "} 
-            </td>
-            <td>
-            <button onClick={() => removeFromCart(item.id)}>
-                  <FaTrashAlt />
-                </button>
             </td>
             <td>
             <button onClick={() => removeFromCart(item.id)}>

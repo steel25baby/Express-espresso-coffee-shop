@@ -45,7 +45,7 @@ const Menu = () => {
         <section className='Menu' key={data.id}>
           <div className='Menu-card'>
             <div className='Card-image'>
-              <img src={cup1} alt="" />
+              <img src={data.imgUrl} alt="coffee pic" />
             </div>
             <div className='Card-details'>
               <h3>{data.variety}</h3>

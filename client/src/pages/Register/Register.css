@@ -1,0 +1,30 @@
+.Signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.Signup-form h1{
+    color: #8a4700; 
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 40px;
+}
+.Sign-up{
+    border: #8a4700 solid 2px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.signup-details label{
+    color: white;
+    padding-right: 1rem;
+    font-size: 30px;
+}
+.signup-details input{
+    padding: 10px 15px;
+}

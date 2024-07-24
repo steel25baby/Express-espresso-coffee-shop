@@ -20,7 +20,8 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify(values),
+        credentials: "include"
       });
 
       if (!response.ok) {
@@ -30,7 +31,7 @@ const Login = () => {
       const data = await response.json();
       console.log('Login successful', data);
       // Save the token or user data if needed
-      navigate('/dashboard'); // Navigate to a protected route after login
+      navigate('/adminMenu'); // Navigate to a protected route after login
     } catch (error) {
       setFieldError('general', 'Invalid email or password');
       console.error(error.message);

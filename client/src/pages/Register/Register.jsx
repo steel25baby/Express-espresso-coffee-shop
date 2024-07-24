@@ -21,6 +21,7 @@ function Signup() {
       setLoading(true);
       setError(null);
       try {
+          console.log("Form Values:", formValues); // Log form values for debugging
           const response = await fetch(`http://localhost:5000/api/customers/register`, {
               method: "POST",
               headers: {
@@ -31,6 +32,7 @@ function Signup() {
 
           if (!response.ok) {
               const errorData = await response.json();
+              console.log("Error Response Data:", errorData); // Log error response data
               throw new Error(errorData.message || "Failed to register");
           }
 
@@ -38,6 +40,7 @@ function Signup() {
           console.log("Registration successful", data);
           navigate("/login");
       } catch (error) {
+          console.error("Error during registration:", error); // Log the error
           setError(error.message);
       } finally {
           setLoading(false);
@@ -62,6 +65,7 @@ function Signup() {
                   name="firstName"
                   placeholder="Enter your first name"
                   className="firstName"
+                  autoComplete="given-name"
                 />
                 <ErrorMessage name='firstName' component="div" className='error' />
               </div>
@@ -72,6 +76,7 @@ function Signup() {
                   name="lastName"
                   placeholder="Enter your last name"
                   className="lastName"
+                  autoComplete="family-name"
                 />
                 <ErrorMessage name='lastName' component="div" className='error' />
               </div>
@@ -82,6 +87,7 @@ function Signup() {
                   name="username"
                   placeholder="Enter your username"
                   className="username"
+                  autoComplete="username"
                 />
                 <ErrorMessage name='username' component="div" className='error' />
               </div>
@@ -92,6 +98,7 @@ function Signup() {
                   name="email"
                   placeholder="Enter your email"
                   className="email"
+                  autoComplete="email"
                 />
                 <ErrorMessage name='email' component="div" className='error' />
               </div>
@@ -102,6 +109,7 @@ function Signup() {
                   name="password"
                   placeholder="Enter your password"
                   className="password"
+                  autoComplete="new-password"
                 />
                 <ErrorMessage name='password' component="div" className='error' />
               </div>
