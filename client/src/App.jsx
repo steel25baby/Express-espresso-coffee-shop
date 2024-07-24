@@ -14,6 +14,7 @@ import Admin from './pages/Admin/Admin';
 import AdminMenu from './pages/Admin/AdminMenu';
 import ViewMenu from './pages/Admin/ViewMenu';
 import AdminCustomers from './pages/Admin/AdminCustomers';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,9 +32,9 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/admin' element={<Admin />} />
-            <Route path='/adminMenu' element={<AdminMenu />} />
+            <Route path='/adminMenu' element={<ProtectedRoute requiredRole={["admin"]} element={<AdminMenu />}/>} />
             <Route path='/viewMenu' element={<ViewMenu />} />
-            <Route path='/adminCustomers' element={<AdminCustomers/>} />
+            <Route path='/adminCustomers' element={<ProtectedRoute element={<AdminCustomers/>} requiredRole={["admin"]}/>} />
           </Routes>
           <Footer />
         </CartProvider>

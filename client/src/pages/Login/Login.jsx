@@ -4,6 +4,8 @@ import "./Login.css";
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import useCustomerStore from '../Store/customerStore';
+import useLoginStore from '../Store/login.store';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid Email").required("Your Email is required"),
@@ -12,6 +14,10 @@ const validationSchema = Yup.object().shape({
 
 const Login = () => {
   const navigate = useNavigate();
+  const changeCustomerInformation=useCustomerStore((state)=>state.changeCustomerInformation);
+  const customerData=useCustomerStore((state)=>state.customer);
+  const setLogin=useLoginStore((state)=>state.setLogin)
+  const login=useLoginStore((state)=>state.login)
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
     try {
@@ -30,8 +36,14 @@ const Login = () => {
 
       const data = await response.json();
       console.log('Login successful', data);
-      // Save the token or user data if needed
-      navigate('/adminMenu'); // Navigate to a protected route after login
+      console.log(data.success);
+      setLogin(data.success);
+      // console.log(login);
+
+      changeCustomerInformation(data);
+      console.log(customerData.data);
+      
+      navigate('/adminMenu'); 
     } catch (error) {
       setFieldError('general', 'Invalid email or password');
       console.error(error.message);
