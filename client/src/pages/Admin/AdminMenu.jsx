@@ -13,41 +13,41 @@ function AdminMenu() {
   const cloudName = "ds69x9aix";
   const preset = "Bridget";
 
-  const handleUploadImage = async () => {
-    const payload = new FormData();
-    payload.append("file", file);
-    payload.append("upload_preset", preset);
-    try {
-      const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
-        payload,
-      );
-      const secure_url = response.data.secure_url;
-      const imageUrl = secure_url.replace("/upload/", "/upload/w_400/f_auto/");
-      console.log(imageUrl);
-      return imageUrl;
-    } catch (err) {
-      console.error(err);
-      alert("Image upload failed. Please try again.");
-      return null;
-    }
-  };
+  // const handleUploadImage = async () => {
+  //   const payload = new FormData();
+  //   payload.append("file", file);
+  //   payload.append("upload_preset", preset);
+  //   try {
+  //     const response = await axios.post(
+  //       `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
+  //       payload,
+  //     );
+  //     const secure_url = response.data.secure_url;
+  //     const imageUrl = secure_url.replace("/upload/", "/upload/w_400/f_auto/");
+  //     console.log(imageUrl);
+  //     return imageUrl;
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert("Image upload failed. Please try again.");
+  //     return null;
+  //   }
+  // };
 
   const handleSubmit = async (formValues) => {
     try {
       setLoading(true);
       setError(null);
-      const imageUrl = await handleUploadImage();
-      if(!imageUrl){
-        setLoading(false);
-        return;
-      }
+      // const imageUrl = await handleUploadImage();
+      // if(!imageUrl){
+      //   setLoading(false);
+      //   return;
+      // }
       const response = await fetch(`${apiurl}/api/coffee/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formValues, imgUrl: imageUrl }),
+        body: JSON.stringify(formValues),
       });
       
       const data = await response.json();
@@ -111,9 +111,11 @@ function AdminMenu() {
               placeholder='Enter Coffee description'
             />
             <input
-              type='file'
+              type='text'
               name='imgUrl'
-              onChange={(event) => setFile(event.target.files[0])} 
+              value={formik.values.imgUrl}
+              onChange={formik.handleChange} 
+              placeholder='Enter Image URL'
             />
           </div>
           <div>

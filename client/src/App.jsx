@@ -31,7 +31,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/admin' element={<Admin />} />
+            <Route path='/admin' element={<ProtectedRoute requiredRole={["admin"]} element={<Admin />}/>} />
             <Route path='/adminMenu' element={<ProtectedRoute requiredRole={["admin"]} element={<AdminMenu />}/>} />
             <Route path='/viewMenu' element={<ViewMenu />} />
             <Route path='/adminCustomers' element={<ProtectedRoute element={<AdminCustomers/>} requiredRole={["admin"]}/>} />

@@ -43,7 +43,7 @@ const Login = () => {
       changeCustomerInformation(data);
       console.log(customerData.data);
       
-      navigate('/adminMenu'); 
+      navigate('/admin'); 
     } catch (error) {
       setFieldError('general', 'Invalid email or password');
       console.error(error.message);

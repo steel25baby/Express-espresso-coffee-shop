@@ -9,7 +9,12 @@ function AdminCustomers() {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await fetch(`${apiurl}/api/customers/customers/`);
+        const response = await fetch(`${apiurl}/api/customers/customers/`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include"
+        });
         const data = await response.json();
 
         if (data.success === true) {
@@ -42,9 +47,9 @@ function AdminCustomers() {
                 <h3>{current.username}</h3>
                 <h4>{current.email}</h4>
               </div>
-              <div>
+              {/* <div>
                 <button>Delete</button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -15,6 +15,8 @@ const Menu = () => {
     try {
       const response = await fetch('http://localhost:5000/api/coffee/');
       const data = await response.json();
+      // console.log(data.coffee);
+      // console.log(coffee);
       setCoffee(data.coffee);
       setLoading(false);
     } catch (error) {
@@ -45,7 +47,7 @@ const Menu = () => {
         <section className='Menu' key={data.id}>
           <div className='Menu-card'>
             <div className='Card-image'>
-              <img src={data.imgUrl} alt="coffee pic" />
+              <img src={data.imgurl} alt="coffee pic" />
             </div>
             <div className='Card-details'>
               <h3>{data.variety}</h3>

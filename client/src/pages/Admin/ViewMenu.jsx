@@ -45,7 +45,7 @@ function ViewMenu() {
     e.preventDefault();
     try {
       const response = await fetch(`${apiurl}/api/coffee/${id}`, {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
@@ -82,10 +82,10 @@ function ViewMenu() {
                 <p>{current.ingredients}</p>
                 <h4>{current.price}</h4>
                 <p>{current.description}</p>
+                <img src={current.imgurl} alt="" />
               </div>
               <div>
                 <button onClick={() => handleDelete(current.id)}>Delete</button>
-                <button onClick={() => setEditCoffee(current)}>Edit</button>
               </div>
             </div>
           ))}
@@ -124,6 +124,14 @@ function ViewMenu() {
                 value={editCoffee.description}
                 onChange={(e) =>
                   setEditCoffee({ ...editCoffee, description: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                name="imgurl"
+                value={editCoffee.imgurl}
+                onChange={(e) =>
+                  setEditCoffee({ ...editCoffee, imgurl: e.target.value })
                 }
               />
               <button type="submit">Update</button>

@@ -34,7 +34,7 @@
     font-weight: 700;
 }
 .Header-logo{
-    width: 5%;
+    width: 8%;
     /* height: 40vh; */
     object-fit: cover;
     overflow: hidden;
@@ -53,7 +53,7 @@
         flex-wrap: wrap;
     }
 }
-.Header-ctas :first-child{
+.Header-ctas .nav-link{
    text-decoration: none;
    background-color: white;
    padding: 10px 20px;
@@ -63,19 +63,10 @@
    font-size: 20px;
    font-weight: 500;
 }
-.Header-ctas :last-child{
-    text-decoration: none;
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-transform: capitalize;
-    color: #301913;
-    font-size: 20px;
-    font-weight: 500;
-}
+
 .Header-cart{
     font-size: 30px;
 }
 .Header-cart a{
-    color: aqua;
+    color: white;
 }

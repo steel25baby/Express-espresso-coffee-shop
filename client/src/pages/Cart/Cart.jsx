@@ -35,7 +35,7 @@ const Cart = () => {
         {cartItems.map((item)=>(
           <tr key={item.id}>
             <td>
-              <img src={cup1} alt="" />
+              <img src={item.imgurl} alt="" />
               <p>{item.variety}</p>
               <p>{item.price}</p>
             </td>
